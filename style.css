@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    background-image: url("images/pattern-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 32px;
+    padding: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+}
+form {
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+form input::placeholder {
+    opacity: 0.5;
+}
+form input {
+    padding: 12px 0px 12px 20px;
+    font-size: 16px;
+    width: 40%;
+    border: 0;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+form button {
+    border: 0;
+    padding: 15px 20px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form button:hover {
+    background-color: #313131;
+}
+
+.result_container {
+    display: none;
+    background-color: #ffffff;
+    border-radius: 15px;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 75px;
+    justify-content: space-around; 
+    -webkit-box-shadow: 0px 10px 35px -18px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 35px -18px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 35px -18px rgba(0,0,0,0.75);    
+}
+
+.result {
+    flex: 1 1 25%;
+    padding: 4% 0%;
+    margin-left: 35px;
+    position: relative;
+}
+
+.location::before, .time_zone::before, .isp::before {
+    position: absolute;
+    height: 35%;
+    border-left: 1px solid hsl(0, 1%, 74%);
+    content: ' ';
+    left: -20px;
+    margin-top: 12px;
+}
+
+.result h3 {
+    font-size: 11px;
+    color: hsl(0, 0%, 59%);
+    line-height: 3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result p {
+    font-size: 20px;
+    color: hsl(0, 0%, 17%);
+    font-weight: 700;
+}
+
+.result_container .isp {
+    border-right: 0;
+}
+
+.outer_container{
+    height: 97vh;
+}
+
+@media screen and (max-width: 768px) {
+    .result_container {
+        flex-direction: column;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .result {
+        padding: 10px 15px 20px 15px;
+        margin-left: 0;
+    }
+
+    .location::before, .time_zone::before, .isp::before {
+        border-left: none;
+    }
+}
