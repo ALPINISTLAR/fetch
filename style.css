@@ -21,16 +21,16 @@ h1 {
     color: #ffffff;
     font-weight: 500;
 }
-form {
+#search_section {
     display: flex;
     justify-content: center;
     border-radius: 50px;
 }
 
-form input::placeholder {
+#search_section input::placeholder {
     opacity: 0.5;
 }
-form input {
+#search_section input {
     padding: 12px 0px 12px 20px;
     font-size: 16px;
     width: 40%;
@@ -39,7 +39,7 @@ form input {
     border-top-left-radius: 10px;
 }
 
-form button {
+#search_section button {
     border: 0;
     padding: 15px 20px;
     border-bottom-right-radius: 10px;
@@ -51,7 +51,7 @@ form button {
     justify-content: center;
 }
 
-form button:hover {
+#search_section button:hover {
     background-color: #313131;
 }
 

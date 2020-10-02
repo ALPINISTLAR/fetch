@@ -6,9 +6,8 @@ const ipLocation = document.querySelector('.location p');
 const timeZone = document.querySelector('.time_zone p');
 const isp = document.querySelector('.isp p');
 
-submitBtn.addEventListener('click', (e) =>{
+submitBtn.addEventListener('click', () =>{
     if(input.value){
-        e.preventDefault();
         fetch(`https://geo.ipify.org/api/v1?apiKey=at_3DwOjzzOTLtsDUzRYm3214uqxxzBq&ipAddress=${input.value}`)
         .then(data => {
             return data.json();
@@ -30,7 +29,7 @@ function getMap(lat, lng) {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox/streets-v11',
-        tileSize: 256,
+        tileSize: 512,
         zoomOffset: -1,
         accessToken: 'pk.eyJ1IjoiYXl5YXphaG1lZCIsImEiOiJja2ZydThwemIwajZiMnFsNzU0Zjk1Z3hiIn0.7boUgiEA8oQdDIbw3t66Fg'
     }).addTo(mymap);
