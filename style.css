@@ -8,9 +8,9 @@
 .container {
     background-image: url("images/pattern-bg.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 85%;
     position: relative;
-    height: 300px;
+    height: 300px;  
     margin: 0 auto;
 }
 
@@ -56,16 +56,18 @@ form button:hover {
 }
 
 .result_container {
-    display: none;
+    display: flex;
     background-color: #ffffff;
     border-radius: 15px;
     max-width: 80%;
     margin: 0 auto;
-    margin-top: 75px;
+    margin-top: 44px;
     justify-content: space-around; 
     -webkit-box-shadow: 0px 10px 35px -18px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 10px 35px -18px rgba(0,0,0,0.75);
     box-shadow: 0px 10px 35px -18px rgba(0,0,0,0.75);    
+    position: relative;
+    z-index: 999;
 }
 
 .result {
@@ -103,10 +105,39 @@ form button:hover {
 }
 
 .outer_container{
-    height: 97vh;
+    /* height: 97vh; */
+    position: relative;
 }
 
+/* leafletjs style */
+
+#mapid { 
+    height: 60vh;
+    margin-top: -45px;
+    }
+
 @media screen and (max-width: 768px) {
+    .container {
+        background-image: url("images/pattern-bg.png");
+        background-repeat: no-repeat;
+        background-size: 100% 80%;
+        position: relative;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 26px;
+        padding: 16px 30px 20px 30px;
+    }
+
+    form input {
+        padding: 12px 0px 12px 20px;
+        font-size: 14px;
+        width: 66%;
+    }
+
+
     .result_container {
         flex-direction: column;
         margin-top: 25px;
@@ -114,11 +145,22 @@ form button:hover {
     }
 
     .result {
-        padding: 10px 15px 20px 15px;
+        padding: 5px 0px 10px 0px;
         margin-left: 0;
     }
 
     .location::before, .time_zone::before, .isp::before {
         border-left: none;
+    }
+
+    #mapid { 
+        height: 64vh;
+        margin-top: -60px;
+        }
+}
+
+@media screen and (min-width: 1344px) {
+    h1 {
+        padding: 22px;
     }
 }
