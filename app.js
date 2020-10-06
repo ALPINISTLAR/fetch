@@ -5,6 +5,7 @@ const ipAddress = document.querySelector('.ip_address p');
 const ipLocation = document.querySelector('.location p');
 const timeZone = document.querySelector('.time_zone p');
 const isp = document.querySelector('.isp p');
+const mapArea = document.querySelector('#mapid');
 
 submitBtn.addEventListener('click', () =>{
     if(input.value){
@@ -20,19 +21,18 @@ submitBtn.addEventListener('click', () =>{
             getMap(result.location.lat, result.location.lng);
         })
     }
-    
 })
 
-function getMap(lat, lng) {
-    var mymap = L.map('mapid').setView([lat, lng], 13);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoiYXl5YXphaG1lZCIsImEiOiJja2ZydThwemIwajZiMnFsNzU0Zjk1Z3hiIn0.7boUgiEA8oQdDIbw3t66Fg'
-    }).addTo(mymap);
-    L.marker([lat, lng]).addTo(mymap);
-}
+var mymap = L.map('mapid').setView([0, 0], 1);
+var marker = L.marker([0, 0]);
 
+function getMap(lat, lng) {
+    //making a map and tiles
+    const tileUrl ='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    const attribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+    const tiles = L.tileLayer(tileUrl, {attribution})
+    tiles.addTo(mymap)
+
+    mymap.setView([lat, lng], 5)
+    marker.setLatLng([lat, lng]).addTo(mymap)
+}
