@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
-  <link rel="stylesheet" href="style.css">
-  
-  <title>Frontend Mentor | IP Address Tracker</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>IP Address Tracker</h1>
-    <div id="search_section">
-      <input type="text" name="search" id="ipSearch" placeholder="Search for any IP address or domain">
-      <button id="submit"><img src="images/icon-arrow.svg" alt=""></button>
+    <title>Frontend Mentor | IP Address Tracker</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>IP Address Tracker</h1>
+      <div id="search_section">
+        <input
+          type="text"
+          name="search"
+          id="ipSearch"
+          placeholder="Search for any IP address or domain"
+        />
+        <a href="invoice.pdf" download>download</a>
+        <button id="submit"><img src="images/icon-arrow.svg" alt="" /></button>
+      </div>
+      <div class="result_container">
+        <div class="result ip_address">
+          <h3>IP ADDRESS</h3>
+          <p>192.168.1.1</p>
+        </div>
+        <div class="result location">
+          <h3>location</h3>
+          <p>Address</p>
+        </div>
+        <div class="result time_zone">
+          <h3>timezone</h3>
+          <p>UTC 5:00</p>
+        </div>
+        <div class="result isp">
+          <h3>isp</h3>
+          <p>PTCL</p>
+        </div>
+      </div>
     </div>
-    <div class="result_container">
-      <div class="result ip_address">
-        <h3>IP ADDRESS</h3>
-        <p>192.168.1.1</p>
-      </div>
-      <div class="result location">
-        <h3>location</h3>
-        <p>Address</p>
-      </div>
-      <div class="result time_zone">
-        <h3>timezone</h3>
-        <p>UTC 5:00</p>
-      </div>
-      <div class="result isp">
-        <h3>isp</h3>
-        <p>PTCL</p>
-      </div>
-    </div>
-</div>
 
-<div id="mapid"></div>
-<footer>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/codementee" target="_blank">Ayyaz Ahmed</a>.
-  </div>
-</footer>
+    <div id="mapid"></div>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/codementee" target="_blank">Ayyaz Ahmed</a>.
+      </div>
+    </footer>
 
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
-<script src="app.js"></script>
-</body>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
 </html>
